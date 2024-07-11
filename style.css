@@ -1,0 +1,41 @@
+*{
+margin :0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root{
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur:10px;
+}
+
+body{
+    text-align: center;
+    background: #193454; 
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.controls{
+    margin-bottom: 50px;
+}
+
+.h1{
+    color: var(--base);
+}
+
+img{
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+
+input{
+    width: 100px;
+}

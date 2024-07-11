@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Scoped CSS variable and Js</title>
+</head>
+<body>
+    <h2>Update CSS Variable with <span class="h1">JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" max="200" min="10" value="10" data-sizing="px">
+
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+        <label for="base">Base Color</label>
+        <input type="color" name="base" value="#ffc600">
+    </div>
+
+    <img src="image.jpeg">
+
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+        inputs.forEach(input => {
+            input.addEventListener('change', handleUpdate);
+            input.addEventListener('mousemove', handleUpdate);
+        });
+        function  handleUpdate(){
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+        }
+        
+
+    </script>
+</body>
+</html>
